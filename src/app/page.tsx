@@ -1,69 +1,88 @@
+"use client";
+
 import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
 
 export default function Home() {
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
+    <main className="min-h-screen bg-white text-gray-900">
+      {/* ================= NAVBAR ================= */}
+      <nav className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 shadow-sm backdrop-blur">
+        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-700 text-xl font-extrabold text-white shadow-md">
+              K
+            </div>
+
+            <div className="hidden sm:block">
+              <h1 className="text-lg font-extrabold leading-tight text-blue-800">
+                Kolleejjii Polii Teeknikaa Sirre
+              </h1>
+              <p className="text-xs text-gray-500">
+                Technical & Vocational Education
+              </p>
+            </div>
+          </Link>
+
+          {/* Navigation */}
+          <div className="flex items-center gap-3 sm:gap-6 lg:gap-8">
+            <Link
+              href="/"
+              className="hidden font-semibold text-blue-700 transition hover:text-blue-900 sm:block"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
+              Home
+            </Link>
+
+            <Link
+              href="/reports"
+              className="hidden font-semibold text-gray-700 transition hover:text-blue-700 md:block"
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              Reports
+            </Link>
+
+            <Link
+              href="#about"
+              className="hidden font-semibold text-gray-700 transition hover:text-blue-700 md:block"
+            >
+              About
+            </Link>
+
+            <Link
+              href="#features"
+              className="hidden font-semibold text-gray-700 transition hover:text-blue-700 md:block"
+            >
+              Features
+            </Link>
+
+           
+        <Link
+              href="/login"
+              className="rounded-lg border border-blue-700 px-4 py-2 text-sm font-bold text-blue-700 transition hover:bg-blue-50 sm:px-5"
+            >
+              Login
+            </Link>
+
+            <Link
+              href="/register"
+              className="rounded-lg bg-blue-700 px-4 py-2 text-sm font-bold text-white shadow-md transition hover:bg-blue-800 sm:px-5"
+            >
+              Register
+            </Link>
+                <Link
+              href="/reports"
+              className="hidden font-semibold text-gray-700 transition hover:text-blue-700 md:block"
+            >
+              Reports
+            </Link>
+
+          </div>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+     
+      </nav>
+
       </main>
-    </div>
   );
 }
